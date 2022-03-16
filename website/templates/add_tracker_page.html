@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {% block title %}Add Tracker{% endblock %} {% block
+content %}
+<h1
+  align="left"
+  class="card-header text-white"
+  style="background: -webkit-linear-gradient(bottom, #ff9d2d, #fcfcff)"
+>
+Hello / Hola / Bonjour / Konnichiwa,  -->  {{ user.fullname }}
+</h1>
+
+<form method="post">
+  <h3 align="center"></h3>
+  <div class="form-group">
+    <h2 style="padding-left: 580px">Course to be added</h2>
+
+    <div align="center">
+      <br />
+
+      <label for="name">Name of the Courses</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        placeholder="Enter Course name"
+        maxlength="30"
+        style="width: 300px; border-radius: 15px; text-align: center"
+        required
+      />
+      <label for="description">Description of the course </label>
+      <textarea
+        class="form-control"
+        id="description"
+        name="description"
+        placeholder="Enter Course Description"
+        maxlength="200"
+        style="width: 300px; border-radius: 15px; text-align: center"
+        required
+      ></textarea>
+
+      <label style="padding-top: 10px" for="type">Course Type</label>
+      <select
+        style="width: 300px; border-radius: 15px; text-align: center"
+        id="type"
+        class="form-control"
+        name="type"
+        required
+      >
+        <option value="Numerical">Databases course</option>
+        <option value="Multiple Choice">ML courses</option>
+        <option value="Fahrenheit">Data Science courses</option>
+        <option value="Boolean">Self-Improvement Courses</option>
+      </select>
+
+      <br />
+      <button
+        type="submit"
+        class="btn"
+        style="
+          border-radius: 12px;
+          background: -webkit-linear-gradient(top, #ff5e0e, #ff9944);
+        "
+      >
+        <b>✩ ADD COurse</b>
+      </button>
+    </div>
+  </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'base.html' %} {% block title %}Edit Tracker{% endblock %} {% block
+content %}
+<h1
+  align="left"
+  class="card-header text-white"
+  style="background: -webkit-linear-gradient(bottom, #ff9d2d, #fcfcff)"
+>
+  Hello / Hola / Bonjour / Konnichiwa, --> {{ user.fullname }}
+</h1>
+
+<form method="post">
+  <h3 align="center"></h3>
+  <div class="form-group">
+    <h2 style="padding-left: 580px">Edit Course</h2>
+
+    <div align="center">
+      <br />
+
+      <label for="name">Name of the Course</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        placeholder="Enter Course Name"
+        maxlength="30"
+        style="width: 300px; border-radius: 15px; text-align: center"
+        value="{{ tracker.name }}"
+      />
+      <label for="description">Description of the course</label>
+      <textarea
+        class="form-control"
+        id="description"
+        name="description"
+        placeholder="Enter Course description"
+        maxlength="200"
+        style="width: 300px; border-radius: 15px; text-align: center"
+      >
+{{ tracker.description }}</textarea
+      >
+
+      <label style="padding-top: 10px" for="type">Course Type</label>
+      <select
+        style="width: 300px; border-radius: 15px; text-align: center"
+        id="type"
+        class="form-control"
+        name="type"
+        required
+      >
+        <option value="{{ tracker.tracker_type }}">
+          {{ tracker.tracker_type }}
+        </option>
+        <option value="Numerical">Databases course</option>
+        <option value="Multiple Choice">ML courses</option>
+        <option value="Fahrenheit">Data Science courses</option>
+        <option value="Boolean">Self-Improvement Courses</option>
+      </select>
+
+      <br />
+      <button
+        type="submit"
+        class="btn"
+        style="
+          border-radius: 12px;
+          background: -webkit-linear-gradient(top, #ff5e0e, #ff9944);
+        "
+      >
+        <b>✩ Update </b>
+      </button>
+    </div>
+  </div>
+</form>
+
+{% endblock %}
